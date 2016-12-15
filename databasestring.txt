@@ -1,0 +1,4 @@
+<connectionStrings>
+    <add name="dbconnect" connectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\user\Documents\ECS-System.mdb"
+      providerName="System.Data.OleDb" />
+  </connectionStrings>
