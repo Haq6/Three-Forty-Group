@@ -1,0 +1,50 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace _340
+{
+  //This is the web form 
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+   // This is the code which gets the file type
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (FileUpload1.HasFile)
+            {
+          //This code only accept pdf file
+                string ext = System.IO.Path.GetExtension(FileUpload1.FileName);
+                if (ext == ".pdf")
+
+                {
+                    string path = Server.MapPath(" documents//");
+                    FileUpload1.SaveAs(path + FileUpload1.FileName);
+                    Label1.Text = FileUpload1.PostedFile.ContentLength.ToString();
+                    Label2.Text = FileUpload1.PostedFile.ContentType;
+              //Once file uploded this conformation message show
+                    Response.Write("<h4>Your course work is uploded</h4>");
+
+                }
+                else
+                {
+                 //Without selected file if user click upload this message will appear
+                    Response.Write("<h3>Please select an file</h3>");
+
+
+                }
+
+            }
+
+        }
+
+
+    }
+}
