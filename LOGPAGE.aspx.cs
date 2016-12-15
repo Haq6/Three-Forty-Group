@@ -25,7 +25,7 @@ namespace LOGINSYSTEM
             if (opr.getUser())
             {
                 Session["User"] = opr.USERNAME;
-                Response.Redirect("MAINPAGE.aspx");
+                Response.Redirect("uploadpage.aspx");//After login redirects to my upload page
             }
             else
             {
